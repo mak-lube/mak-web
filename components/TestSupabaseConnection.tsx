@@ -26,9 +26,10 @@ export default function TestSupabaseConnection() {
           setStatus('ok');
           setMessage(`Connected. Sample SKU: ${data[0].name}`);
         }
-      } catch (err: any) {
+      } catch (err) {
         setStatus('error');
-        setMessage(err.message ?? 'Unknown error');
+        const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+        setMessage(errorMessage);
       }
     };
 
