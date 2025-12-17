@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import { supabase } from '@/lib/supabaseClient';
 
 type SkuSearchRow = {
@@ -74,10 +74,9 @@ export default function SkuSearchPlayground() {
             <input
               className="w-full rounded-xl px-3 py-2 bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               value={q}
-              onChange={(e) => setQ(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setQ(e.target.value)}
               placeholder="e.g. MAK 4T STAR"
             />
-          }
           </div>
 
           <div className="flex-1">
@@ -87,7 +86,7 @@ export default function SkuSearchPlayground() {
             <input
               className="w-full rounded-xl px-3 py-2 bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               value={grp}
-              onChange={(e) => setGrp(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setGrp(e.target.value)}
               placeholder="e.g. TWO WHEELER 4 STROKE"
             />
           </div>
@@ -97,7 +96,7 @@ export default function SkuSearchPlayground() {
             <input
               className="w-full rounded-xl px-3 py-2 bg-zinc-950 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               value={visc}
-              onChange={(e) => setVisc(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setVisc(e.target.value)}
               placeholder="e.g. 10W30"
             />
           </div>
